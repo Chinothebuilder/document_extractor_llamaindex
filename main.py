@@ -4,7 +4,7 @@ from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, LLMPredicto
 from langchain.llms.openai import OpenAI
 
 # Uncomment to specify your OpenAI API key here, or add corresponding environment variable (recommended)
-# os.environ['OPENAI_API_KEY']= "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"
+os.environ['OPENAI_API_KEY']= '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'
 
 # Provide openai key from the frontend if you are not using the above line of code to seet the key
 openai_api_key = st.sidebar.text_input(
