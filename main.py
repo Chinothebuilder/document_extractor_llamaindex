@@ -4,7 +4,7 @@ from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, LLMPredicto
 from langchain.llms.openai import OpenAI
 
 # Uncomment to specify your OpenAI API key here, or add corresponding environment variable (recommended)
-os.environ['OPENAI_API_KEY']= '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'
+#os.environ['OPENAI_API_KEY']= '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'
 
 # Provide openai key from the frontend if you are not using the above line of code to seet the key
 openai_api_key = st.sidebar.text_input(
@@ -19,7 +19,6 @@ directory_path = st.sidebar.text_input(
 
 def get_response(query,directory_path,openai_api_key):
     # This example uses text-davinci-003 by default; feel free to change if desired. 
-    # Skip openai_api_key argument if you have already set it up in environment variables (Line No: 7)
     llm_predictor = LLMPredictor(llm=OpenAI(openai_api_key=openai_api_key, temperature=0, model_name="text-davinci-003"))
 
     # Configure prompt parameters and initialise helper
@@ -44,7 +43,7 @@ def get_response(query,directory_path,openai_api_key):
         st.error(f"Not a valid directory: {directory_path}")
 
 # Define a simple Streamlit app
-st.title("DocExtractor")
+st.title("Interact With Your Documents")
 query = st.text_input("What would you like to ask?", "")
 
 # If the 'Submit' button is clicked
